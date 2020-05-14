@@ -1,0 +1,6 @@
+ready.tfplan
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfvars
+.terraform/plugins/windows_amd64/lock.json
+.terraform/plugins/windows_amd64/terraform-provider-aws_v2.61.0_x4.exe
