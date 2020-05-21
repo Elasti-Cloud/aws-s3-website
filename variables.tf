@@ -16,6 +16,11 @@ variable "s3_bucket_name" {
   default     = "aws-s3-website-sample001"
 }
 
+variable "sample_web_site" {
+  description = "S3 bucket address with the source code for the web site"
+  type        = string
+  default     = "s3://wildrydes-us-east-1/WebApplication/1_StaticWebHosting/website"
+}
 variable "tags" {
   description = "Dict of tags"
   type        = map(string)

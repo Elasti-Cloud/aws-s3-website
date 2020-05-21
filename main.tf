@@ -12,24 +12,10 @@ provider "aws" {
 resource "aws_s3_bucket" "web_bucket" {
   bucket = var.s3_bucket_name
   acl    = "private"
-}
 
-# Creating a simple index.html file and uploading to the S3 bucket
-resource "aws_s3_bucket_object" "index_html" {
-  bucket       = aws_s3_bucket.web_bucket.id
-  key          = "index.html"
-  content_type = "text/html"
-  content      = <<EOF
-<html xmlns="http://www.w3.org/1999/xhtml" lang=en>
-<head>
-    <title>Sample Website</title>
-</head>
-<body>
-  <h1>Welcome to my website deployed with Terraform</h1>
-  <p>Now hosted on Amazon S3!</p>
-</body>
-</html>
-EOF
+  provisioner "local-exec" {
+    command = "aws s3 sync ${var.sample_web_site} s3://${var.s3_bucket_name} --profile ${var.profile}"
+  }
 }
 
 # Creating AWS CloudFront distribution
