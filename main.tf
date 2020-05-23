@@ -46,7 +46,7 @@ EOF
 resource "aws_iam_role_policy" "codepipeline_policy" {
   name = "codepipeline-github-s3-policy"
   role = aws_iam_role.codepipeline_role.id
-  
+
   policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -110,10 +110,10 @@ resource "aws_codepipeline" "codepipeline" {
       output_artifacts = ["source_output"]
 
       configuration = {
-        Owner      = "Elasti-Cloud"
-        Repo       = "web_site"
-        Branch     = "master"
-        OAuthToken = var.GitHub_token
+        Owner      = var.GitHub["Owner"]
+        Repo       = var.GitHub["Repo"]
+        Branch     = var.GitHub["Branch"]
+        OAuthToken = var.GitHub["Token"]
       }
     }
   }

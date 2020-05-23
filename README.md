@@ -1,6 +1,9 @@
 # AWS S3 based website with Terraform 
 Creating a CI/CD pipeline for a website on AWS S3 with provisioning required infrastructure.
 
+# Architectural diagram
+![Architectural diagram](arh_diagram.png)
+
 # Description
 Configuration provisions AWS CodePipline's pipeline linked to the specified GitHub repo with the source files that will be deployed on commits to the specified S3 bucket for a website, AWS CloudFront distribution that is pointed to the same S3 bucket and related AWS IAM roles to support required functionality. The output consists of a link to the domain name corresponding to the created AWS CloudFront distribution.  
 
