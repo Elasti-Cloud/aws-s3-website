@@ -1,5 +1,5 @@
 # AWS S3 based website with Terraform 
-Creating a CI/CD pipeline for a website on AWS S3 with provisioning required infrastructure.
+Creating a CI/CD pipeline (GitHub to AWS) for a static website on AWS S3 with provisioning required infrastructure.
 
 # Architectural diagram
 ![Architectural diagram](arh_diagram.png)
